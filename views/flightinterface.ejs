@@ -1,0 +1,185 @@
+<style>
+  .maincontainer {
+    background: #273c75;
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+
+    width:50%;
+    height:auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+     
+  }
+
+  .heading
+  {
+    font-size: 20px;
+    font-weight:bold;
+    color: #273c75;
+    margin-bottom: 15px;
+  }
+  .daysstyle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+      
+
+  }
+  .buttonstyle{
+    width: 100%;
+  
+  }
+  
+</style>
+<html>
+
+<head>
+  <title>Flight Interface</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+  <script src="/javascripts/project.js"></script>
+</head> 
+<form action="/flight/flightsubmit" method="post" enctype="multipart/form-data">
+  <div class="maincontainer">
+    <div class="box">
+      
+      <div class="heading">
+        <a href="/flight/displayallrecords"><img src="/images/displayrecordicon.png" width="35"></a>
+        <img src="/images/flighticon.png" width="65">
+        <b>Flight interface</b>
+      </div>  
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="flightname" class="form-label"><b>FlightName</b></label>
+            <input type="text" class="form-control" name="flightname" id="flightname" required>
+          </div>
+      
+      <div class="col-md-6">
+        <label for="flighttype" class="form-label"><b>FlightType</b></label>
+        <select name="flighttype" id="flighttype" class="form-select" required>
+          <option selected>Choose...</option>
+          <option>Economy</option>
+          <option>Business</option>
+          <option>Economy/Business</option>
+        </select>
+      </div>
+
+        <div class="col-md-4">
+          <label for="seats" class="form-label"><b>Total Seats</b></label>
+          <input type="text" class="form-control" name="seats" id="seats" required>
+        </div>
+        
+        <div class="col-md-8 ">
+          <label for="seats" class="form-label"><b>Select Flight Days</b></label>
+        <div class="daysstyle">
+        <div class="form-check ">
+          <input class="form-check-input" type="checkbox" value="mon" id="days" name="days" >
+          <label class="form-check-label" for="days">
+            Mon
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="tue" id="days" name="days">
+          <label class="form-check-label" for="days">
+            Tue
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="wed" id="wed" name="days">
+          <label class="form-check-label" for="days">
+            Wed
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="thur" id="days" name="days">
+          <label class="form-check-label" for="days">
+            Thur
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="fri" id="days" name="days">
+          <label class="form-check-label" for="days">
+            Fri
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="sat" id="days" name="days">
+          <label class="form-check-label" for="days">
+            Sat
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="sun" id="days" name="days">
+          <label class="form-check-label" for="days">
+            Sun
+          </label>
+        </div>
+          </div>
+      </div>
+
+      <div class="col-md-3">
+        <label for="source" class="form-label"><b>FlightSource</b></label>
+        <select name="source" id="source" class="form-select" required>
+          <option selected>Source city...</option>
+          
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="depttime" class="form-label"><b>DepartureTime</b></label>
+        <input type="time" class="form-control" name="depttime" id="depttime" required>
+      </div>
+
+      <div class="col-md-3">
+        <label for="destination" class="form-label"><b>FlightDestination</b></label>
+        <select name="destination" id="destination" class="form-select" required>
+          <option selected>Destination city...</option>
+          
+        </select>
+      </div>
+
+
+      <div class="col-md-3">
+        <label for="arrtime" class="form-label"><b>ArrivalTime</b></label>
+        <input type="time" class="form-control" name="arrtime" id="arrtime" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="company" class="form-label"><b>Company</b></label>
+        <input type="text" class="form-control" name="company" id="company" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="logo" class="form-label"><b>Company Logo</b></label>
+        <input type="file" class="form-control" name="logo" id="logo" required>
+      </div>
+      <div class="col-md-6 ">
+      <button type="submit" class="btn btn-secondary buttonstyle"><b>Submit</b></button>
+      </div>
+      <div class="col-md-6 buttonstyle">
+      <button type="reset" class="btn btn-secondary buttonstyle"><b>Reset</b></button>
+      </div>
+
+      <div class="col-md-12 " style="display: flex;justify-content: center;font-weight: bold;">
+        <%=message %>
+        </div>
+    </div> 
+    
+    
+  
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</html>
+
+
+
